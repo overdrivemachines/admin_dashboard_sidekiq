@@ -1,7 +1,8 @@
 class HelloJob
   include Sidekiq::Job
 
-  def perform(*args)
-    # Do something
+  def perform(*_args)
+    sleep 1
+    puts "Hello World!"
   end
 end
