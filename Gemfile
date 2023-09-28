@@ -2,26 +2,27 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
+gem "jbuilder"
+gem "jsbundling-rails"
+gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.8"
+gem "redis", "~> 4.0"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
-gem "puma", "~> 5.0"
-gem "jsbundling-rails"
-gem "turbo-rails"
 gem "stimulus-rails"
-gem "jbuilder"
-gem "redis", "~> 4.0"
+gem "turbo-rails"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "sassc-rails"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 # gem "image_processing", "~> 1.2"
 
+gem "devise"
 gem "sidekiq"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
