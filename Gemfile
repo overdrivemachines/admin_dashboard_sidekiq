@@ -26,6 +26,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
+  gem 'chusaku', require: false
+  gem 'rails-erd'
   gem "web-console"
 end
 
