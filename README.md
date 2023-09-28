@@ -31,17 +31,15 @@ ps aux | grep redis
 sudo kill -9 51066
 ```
 
-- Database creation
+- In Procfile.dev add the following:
 
-- Database initialization
+```
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+```
 
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+- Create file `config/sidekiq.yml`
+- Create new Sidekiq job: `rails g sidekiq:job hello`. This is create a file app/sidekiq/hello_job.rb.
+- Reference the job in the controller as: HelloJob.perform_at(5.seconds.from_now) or HelloJob.perform_async()
 
 # References
 
